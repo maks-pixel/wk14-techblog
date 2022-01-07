@@ -4,7 +4,7 @@ const { Post, User, Comment } = require('../models');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
-  console.log('======================');
+  console.log(req.session);
   Post.findAll({
     include: [
       {
@@ -31,6 +31,16 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
+});
+
 
 module.exports = router;
 

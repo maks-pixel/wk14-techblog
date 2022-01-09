@@ -1,0 +1,39 @@
+<div class="card post">
+  <div class="card-header">
+    {{post.title}}
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{post.description}}</p>
+      <footer class="blockquote-footer">by {{post.user.username}} <cite title="Source Title">on {{post.created_at}}</cite></footer>
+    </blockquote>
+  </div>
+  <div>
+      <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+  </div>
+</div>
+{{#if loggedIn}}
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add comment</button>
+  </div>
+</form>
+{{/if}}
+<div class="comments">
+  {{#each post.comments}}
+  <section class="comment">
+    <div class="meta">
+      {{user.username}} on {{created_at}}
+    </div>
+    <div class="text">
+      {{comment_text}}
+    </div>
+  </section>
+  {{/each}}
+</div>
+
+<script src ="/javascript/comment.js"></script>

@@ -4,14 +4,13 @@
 <form class="new-post-form">
 <div class="mb-3">
   <label for="post-title" class="form-label">Title</label>
-  <input type="text" class="form-control" name="post-title" id="post-title" placeholder="title here">
+  <input type="text" class="form-control" name="post-title"/>
 </div>
 <div class="mb-3">
   <label for="description" class="form-label">description</label>
-  <input type="text" class="form-control" name="description" id="description" placeholder="description here">
+  <input type="text" class="form-control" id="description" name="description"/>
 </div>
 <button type="submit" class="btn">Create</button>
-
   </form>
 </section>
 
@@ -22,7 +21,7 @@
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
-      <a href="/new-post/edit/{{post.id}}" class="edit-link">Edit post</a>
+      <a href="/newpost/edit/{{post.id}}" class="edit-link">Edit post</a>
     </li>
     {{/each}}
   </ol>

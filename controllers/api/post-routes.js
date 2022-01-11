@@ -1,12 +1,20 @@
 const router = require('express').Router();
-const { Post, User } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
   Post.findAll({
-    attributes: ['id', 'title',  'description', 'created_at'],
+    attributes: ['id', 'title', 'description', 'created_at'],
     order: [['created_at', 'DESC']],
     include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
       {
         model: User,
         attributes: ['username']
@@ -27,6 +35,14 @@ router.get('/:id', (req, res) => {
     },
     attributes: ['id', 'description', 'title', 'created_at'],
     include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
       {
         model: User,
         attributes: ['username']
@@ -51,7 +67,7 @@ router.post('/', (req, res) => {
   Post.create({
     title: req.body.title,
     description: req.body.description,
-    user_id: req.body.user_id
+    user_id: req.session.user_id
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -63,7 +79,8 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   Post.update(
     {
-      title: req.body.title
+      title: req.body.title,
+      description: req.body.description
     },
     {
       where: {

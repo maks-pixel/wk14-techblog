@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog R Us</title>
-  <link rel="stylesheet" href="/stylesheet/style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="/stylesheet/style.css">
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Tech Blog R Us</a>
+    <a class="navbar-brand links" href="/">Tech Blog R Us</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,14 +22,14 @@
         </li>
         {{#if loggedIn}}
         <li class="nav-item">
-          <a class="nav-link active" href="/newpost">New post</a>
+          <a class="nav-link active links" href="/newpost">New post</a>
         </li>
          <li class="nav-item">
           <button class="nav-link active" id="logout">Logout</button>
         </li>
         {{else}}
           <li class="nav-item">
-          <a class="nav-link active" href="/login">Login</a>
+          <a class="nav-link active links" href="/login">Login</a>
         </li>
         {{/if}}
       </ul>
@@ -39,13 +39,13 @@
   <div class="wrapper">
     <header>
       <h1>
-        <a href="/">Tech Blog R Us</a>
+        Tech Blog R Us
       </h1>
     </header>
     <main>
       {{{ body }}}
     </main>
-    <footer>
+    <footer class="footer">
       Thanks for visiting!
     </footer>
   </div>

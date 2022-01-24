@@ -1,8 +1,122 @@
+:root {
+    --off-pink: #e2d8d7;  
+    --forest: #33422F;
+    --dark: #011a00;
+    --soft-green: #869069;
+}
 * {
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
+    box-sizing: border-box; 
 }
+a{
+    text-decoration: none;
+    color:var(--dark);
+}
+header, .footer{
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(226, 216, 215, 0.5);
+    font-size: 38px;
+    color:var(--dark);
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 1.55vw;
+    color:var(--dark);
+}
+#logout{
+    border:none; 
+    background: var(--soft-green);
+    font-size: 1.55vw;
+    color:var(--dark);
+}
+body {
+    background: var(--soft-green);
+    color:var(--dark);
+}
+
+nav ul{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style:none;
+}
+
+.btn {
+    border: solid 1px var(--forest);
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+article{
+    display: flex;
+    margin: 2%;
+    flex-direction: column;
+}
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:var(--off-pink);
+}
+main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2%;
+    width:100%;
+    height:50%;
+}
+textarea{
+    width: 100%;
+}
+.card{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 1%;
+    border:solid 4px var(--forest);
+}
+.footer{
+    width: 100%;
+    bottom: 0;
+    padding:20px 30px;
+    background-color: var(--soft-green);
+    display: flex;
+    justify-content: center;
+    position: bottom;
+    border:solid 4px var(--forest);
+}
+.btn, .edit-link{
+    border:solid 1px var(--forest);
+}
+.card-header.title{
+    font-size: large;
+    text-align: center;
+}
+.card
 .hide{
     display: none;
+}
+
+a:hover, #logout:hover .btn:hover{
+    color:darkmagenta;
+    background-color: rgba(197, 171, 123, 0.5);
 }

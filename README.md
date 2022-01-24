@@ -14,7 +14,7 @@
  * [Questions](#Questions)
  
  ## Installation
- go to the deployed site here:
+ go to the deployed site here: https://morning-scrubland-20709.herokuapp.com/
  or download the repository and run the cript so that the database is created. you will need mySql and node.js to have this file run.
 
  ## Usage

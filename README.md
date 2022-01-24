@@ -4,7 +4,7 @@
  ## Description
  
  Become a user and post about your tech! comment on other peoples posts and be a part of the community.
- ![Screenshot](screenshot.png) 
+ ![Screenshot](public/images/screenshot.png) 
 
  ## Table of Contents
  * [Installation](#Installation)
